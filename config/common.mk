@@ -42,6 +42,10 @@ PRODUCT_COPY_FILES += \
 
 # userinit support
 PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/95zipalign
+
+# zipalign support
+PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
 # Compcache/Zram support
@@ -82,7 +86,6 @@ PRODUCT_PACKAGES += \
     LatinIME \
     SpareParts \
     Superuser \
-    Superuser.apk \
     su
 
 # Optional CM packages
