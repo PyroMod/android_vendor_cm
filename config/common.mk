@@ -42,11 +42,11 @@ PRODUCT_COPY_FILES += \
 
 # userinit support
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/95zipalign
+    vendor/cm/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
 # zipalign support
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
+    vendor/cm/prebuilt/common/etc/init.d/95zipalign:system/etc/init.d/95zipalign
 
 # Compcache/Zram support
 PRODUCT_COPY_FILES += \
