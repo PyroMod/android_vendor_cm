@@ -77,7 +77,7 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/etc/mkshrc:system/etc/mkshrc
 
 # Google apps
-$(call inherit-product-if-exists, vendor/google/propriertary/google-vendor.mk)
+include vendor/google/proprietary/google-vendor.mk
 
 # T-Mobile theme engine
 include vendor/cm/config/themes_common.mk
