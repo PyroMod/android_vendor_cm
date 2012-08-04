@@ -55,6 +55,8 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache
 
 PRODUCT_COPY_FILES +=  \
+    vendor/cm/prebuilt/common/app/SuperUser.apk:system/app/SuperUser.apk \
+    vendor/cm/prebuilt/common/xbin/su:system/xbin/su \
     vendor/cm/proprietary/RomManager.apk:system/app/RomManager.apk \
     vendor/cm/proprietary/Term.apk:system/app/Term.apk \
     vendor/cm/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
@@ -88,6 +90,8 @@ PRODUCT_PACKAGES += \
     Development \
     LatinIME \
     SpareParts \
+    Superuser \
+    su
 
 # Optional CM packages
 PRODUCT_PACKAGES += \
