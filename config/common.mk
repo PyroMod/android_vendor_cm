@@ -88,8 +88,6 @@ PRODUCT_PACKAGES += \
     Development \
     LatinIME \
     SpareParts \
-    Superuser \
-    su
 
 # Optional CM packages
 PRODUCT_PACKAGES += \
