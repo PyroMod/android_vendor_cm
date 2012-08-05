@@ -31,8 +31,6 @@ PRODUCT_COPY_FILES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
-    vendor/cm/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
     vendor/cm/prebuilt/common/bin/50-cm.sh:system/addon.d/50-cm.sh
 
 # init.d support
@@ -50,9 +48,10 @@ PRODUCT_COPY_FILES += \
 
 # Compcache/Zram support
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/init.local.rc:system/etc/init.local.rc \
     vendor/cm/prebuilt/common/bin/compcache:system/bin/compcache \
-    vendor/cm/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache
+    vendor/cm/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache \
+    vendor/cm/prebuilt/common/etc/init.local.rc:system/etc/init.local.rc \
+    vendor/cm/prebuilt/common/etc/init.d/01zram:system/etc/init.d/01zram
 
 PRODUCT_COPY_FILES +=  \
     vendor/cm/prebuilt/common/app/Superuser.apk:system/app/Superuser.apk \
