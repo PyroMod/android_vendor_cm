@@ -10,7 +10,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.rommanager.developerid=cyanogenmodnightly
 else
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=cyanogenmod
+
+    # Rom Manager properties
+    ro.rommanager.developerid=teamandroid
+
+PRODUCT_PROPERTY_OVERRIDES += \
+
+    # Goo app properties
+    ro.goo.developerid=sparksco
+    ro.goo.board=$(TARGET_PRODUCT) \
+    ro.goo.rom=sparkscoCM10Nighties
+    ro.goo.version=$(shell date +%s)
+    
 endif
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
