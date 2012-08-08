@@ -10,16 +10,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.rommanager.developerid=cyanogenmodnightly
 else
 PRODUCT_PROPERTY_OVERRIDES += \
-
-    # Rom Manager properties
-    ro.rommanager.developerid=teamandroid
-
-PRODUCT_PROPERTY_OVERRIDES += \
-
-    # Goo app properties
-    ro.goo.developerid=sparksco
+    ro.rommanager.developerid=teamandroid \
+    ro.goo.developerid=sparksco \
     ro.goo.board=$(TARGET_PRODUCT) \
-    ro.goo.rom=sparkscoCM10Nighties
+    ro.goo.rom=sparkscoCM10Nighties \
     ro.goo.version=$(shell date +%s)
     
 endif
