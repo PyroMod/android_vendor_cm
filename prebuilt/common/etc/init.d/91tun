@@ -14,14 +14,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# Print startup info
+# Check if tun kernel module is present
 #
 
-L="log -p i -t cm"
+if [ -e /system/lib/modules/tun.ko ] ; then
+	insmod /system/lib/modules/tun.ko
+	echo "[91TUN]: Inserted tun kernel module.";
+else
+	echo "[91TUN]: No tun kernel module found.";
+fi
 
-$L "Welcome to Android `getprop ro.build.version.release` / CyanogenMod-`getprop ro.cm.version`";
-$L "                                                _ ";
-$L " __ __ _ ___  _ _  __  ___  __ _ _  _  _  __  __))";
-$L "((_ \\(/'((_( ((\\( ((_)((_( (('((\\( ((\`1( ((_)((_( ";
-$L "     ))                 _))";
-$L " ";

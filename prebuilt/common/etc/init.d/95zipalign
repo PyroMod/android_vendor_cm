@@ -16,6 +16,7 @@
 #
 # Brainmaster Tweaks
 # Advanced Automatic ZipAlign
+#
 
 LOG_FILE=/data/zipalign.log
 ZIPALIGNDB=/data/zipalign.db
