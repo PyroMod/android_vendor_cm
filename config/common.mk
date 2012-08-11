@@ -60,6 +60,10 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf \
     vendor/cm/prebuilt/common/etc/init.d/01sysctl:system/etc/init.d/01sysctl
 
+# Tun module
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/etc/init.d/91tun:system/etc/init.d/91tun
+
 PRODUCT_COPY_FILES +=  \
     vendor/cm/prebuilt/common/app/Superuser.apk:system/app/Superuser.apk \
     vendor/cm/prebuilt/common/xbin/su:system/xbin/su \
