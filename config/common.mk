@@ -40,11 +40,11 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/cm/prebuilt/common/bin/sysinit:system/bin/sysinit
 
-# userinit support
+# Userinit support
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
-# zipalign support
+# Zipalign support
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/etc/init.d/95zipalign:system/etc/init.d/95zipalign
 
@@ -60,8 +60,9 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf \
     vendor/cm/prebuilt/common/etc/init.d/01sysctl:system/etc/init.d/01sysctl
 
-# Tun module
+# Check if modules exist 
 PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/etc/init.d/91kineto_gan:system/etc/init.d/91kineto_gan \
     vendor/cm/prebuilt/common/etc/init.d/91tun:system/etc/init.d/91tun
 
 PRODUCT_COPY_FILES +=  \
