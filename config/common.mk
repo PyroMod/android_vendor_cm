@@ -10,7 +10,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.rommanager.developerid=cyanogenmodnightly
 else
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=cyanogenmod
+    ro.rommanager.developerid=blahbl4hblah
 endif
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
@@ -28,12 +28,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Copy over the changelog to the device
 PRODUCT_COPY_FILES += \
     vendor/cm/CHANGELOG.mkdn:system/etc/CHANGELOG-CM.txt
-
-# Backup Tool
-PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/bin/50-cm.sh:system/addon.d/50-cm.sh \
-    vendor/cm/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
-    vendor/cm/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions 
 
 # init.d support
 PRODUCT_COPY_FILES += \
@@ -160,7 +154,7 @@ ifdef CM_BUILDTYPE
     endif
 else
     # If CM_BUILDTYPE is not defined, set to UNOFFICIAL
-    CM_BUILDTYPE := UNOFFICIAL
+    CM_BUILDTYPE := PYROMOD
     CM_EXTRAVERSION :=
 endif
 
