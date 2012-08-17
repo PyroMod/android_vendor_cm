@@ -56,8 +56,11 @@ PRODUCT_COPY_FILES += \
 
 # Check if modules exist 
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/init.d/91kineto_gan:system/etc/init.d/91kineto_gan \
-    vendor/cm/prebuilt/common/etc/init.d/91tun:system/etc/init.d/91tun
+    vendor/cm/prebuilt/common/etc/init.d/91modules:system/etc/init.d/91modules \
+
+# Tweaks support
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
 
 PRODUCT_COPY_FILES +=  \
     vendor/cm/prebuilt/common/app/Superuser.apk:system/app/Superuser.apk \
