@@ -6,7 +6,6 @@ ifneq ($(TARGET_BOOTANIMATION_NAME),)
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=teamandroid \
     ro.goo.developerid=sparksco \
     ro.goo.board=$(TARGET_PRODUCT) \
     ro.goo.rom=sparkscoCM10Nightlies \
