@@ -10,8 +10,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.board=$(TARGET_PRODUCT) \
     ro.goo.rom=sparkscoCM10Nightlies \
     ro.goo.version=$(shell date +%s)
-    
-endif
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
