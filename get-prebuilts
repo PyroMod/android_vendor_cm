@@ -3,9 +3,6 @@ BASEDIR=`dirname $0`
 
 mkdir -p $BASEDIR/proprietary
 
-# Get ROM Manager
-curl -L -o $BASEDIR/proprietary/RomManager.apk -O -L http://download.clockworkmod.com/recoveries/RomManager.apk
-
 # Get Android Terminal Emulator (we use a prebuilt so it can update from the Market)
 curl -L -o $BASEDIR/proprietary/Term.apk -O -L https://github.com/downloads/jackpal/Android-Terminal-Emulator/Term.apk
 unzip -o -d $BASEDIR/proprietary $BASEDIR/proprietary/Term.apk lib/armeabi/libjackpal-androidterm4.so
@@ -13,4 +10,6 @@ unzip -o -d $BASEDIR/proprietary $BASEDIR/proprietary/Term.apk lib/armeabi/libja
 # Get goomanager beta (we use a prebuilt so it can update from the Market)
 cd ..;
 echo "fetching goomanager beta";
+BASEDIR=`dirname $0`
 cp $BASEDIR/goomanager/com.S0up.goomanager-beta.apk -f $BASEDIR/cm/proprietary/goomanager.apk;
+echo "done";
