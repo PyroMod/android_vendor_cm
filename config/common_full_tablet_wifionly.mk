@@ -1,3 +1,6 @@
+ifdef ($(CM_BUILD),grouper)
+    $(call inherit-product, vendor/cm/config/grouper.mk)
+else
 # Inherit common CM stuff
 $(call inherit-product, vendor/cm/config/common.mk)
 
@@ -26,4 +29,5 @@ PRODUCT_COPY_FILES += \
 ifeq ($(TARGET_BOOTANIMATION_NAME),)
     PRODUCT_COPY_FILES += \
         vendor/cm/prebuilt/common/bootanimation/horizontal-1280x800.zip:system/media/bootanimation.zip
+endif
 endif
