@@ -42,11 +42,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/etc/init.d/95zipalign:system/etc/init.d/95zipalign
 
-# Compcache/Zram support
+# Zram support
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/bin/compcache:system/bin/compcache \
-    vendor/cm/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache \
-    vendor/cm/prebuilt/common/etc/init.local.rc:system/etc/init.local.rc \
     vendor/cm/prebuilt/common/etc/init.d/01zram:system/etc/init.d/01zram
 
 # Sysctl support
