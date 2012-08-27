@@ -57,7 +57,8 @@ PRODUCT_COPY_FILES += \
 
 # Tweaks support
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
+    vendor/cm/prebuilt/common/etc/resolv.conf:system/etc/resolv.conf \
+    vendor/cm/prebuilt/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks
 
 PRODUCT_COPY_FILES +=  \
     vendor/cm/prebuilt/common/app/Superuser.apk:system/app/Superuser.apk \
@@ -94,7 +95,7 @@ PRODUCT_PACKAGES += \
     Camera \
     Development \
     LatinIME \
-    SpareParts \
+    SpareParts
 
 # Optional CM packages
 PRODUCT_PACKAGES += \

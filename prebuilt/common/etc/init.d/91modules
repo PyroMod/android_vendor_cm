@@ -14,14 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# Check if kineto_gan kernel module is present
-if [ -e /system/lib/modules/kineto_gan.ko ] ; then
-	insmod /system/lib/modules/kineto_gan.ko
-	echo "[91KINETO]: Inserted kineto_gan kernel module.";
-else
-	echo "[91KINETO]: No kineto_gan kernel module found.";
-fi
-
 # Check if tun kernel module is present
 if [ -e /system/lib/modules/tun.ko ] ; then
 	insmod /system/lib/modules/tun.ko
