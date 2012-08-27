@@ -93,9 +93,8 @@ include vendor/cm/config/themes_common.mk
 PRODUCT_PACKAGES += \
     Camera \
     Development \
-    FM \
     LatinIME \
-    SpareParts
+    SpareParts \
 
 # Optional CM packages
 PRODUCT_PACKAGES += \
