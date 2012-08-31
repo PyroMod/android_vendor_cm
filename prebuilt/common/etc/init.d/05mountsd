@@ -1,0 +1,78 @@
+#!/system/bin/sh
+#
+# Copyright 2008, The Cyanogenmod Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# Script wrinten by Cyanogenmod for CM7 and Modifications for mounting sd-ext partition as ext4 instead of ext3 by Paul Beeler (SparksCo)
+#
+# mount ext partition from sd card
+
+BB="logwrapper busybox";
+
+if [ "$SD_EXT_DIRECTORY" = "" ];
+then
+    SD_EXT_DIRECTORY=/sd-ext;
+fi;
+
+# find SD Card
+for MMC_NUM in `seq 0 9`;
+do
+    MMC_TYPE=`cat /sys/block/mmcblk$MMC_NUM/device/type`
+    if [ "$MMC_TYPE" = "SD" ];
+    then
+        # 2nd partition of sdcard should be the sd-ext if exist
+        SD_EXT_PART=/dev/block/mmcblk${MMC_NUM}p2
+    fi
+done
+
+if [ -b "$SD_EXT_PART" ];
+then
+    log -p i -t mountsd "Checking filesystems..";
+
+    # fsck the sdcard filesystem first
+    if [ -x `which e2fsck` ];
+    then
+        e2fsck -y $SD_EXT_PART;
+        e2fsk_exitcode=$?;
+    else
+        echo "executable e2fsck not found, assuming no filesystem errors";
+        e2fsk_exitcode=0;
+    fi;
+
+    # set property with exit code in case an error occurs
+    setprop cm.e2fsck.errors $e2fsk_exitcode;
+    if [ "$e2fsk_exitcode" -lt 2 ];
+    then
+        # mount and set perms
+        $BB mount -o noatime,nodiratime,barrier=1 -t ext4 $SD_EXT_PART $SD_EXT_DIRECTORY;
+        if [ "$?" = 0 ];
+        then
+            $BB chown 1000:1000 $SD_EXT_DIRECTORY;
+            $BB chmod 771 $SD_EXT_DIRECTORY;
+            log -p i -t mountsd "$SD_EXT_DIRECTORY successfully mounted";
+        else
+            log -p e -t mountsd "Unable to mount filesystem for $SD_EXT_DIRECTORY!";
+        fi;
+    else
+        log -p e -t mountsd "Unable to repair filesystem, disabling apps2sd";
+    fi;
+else
+    # Remove /system/etc/init.d/10apps2sd if present
+    if [ -e /system/etc/init.d/10apps2sd ];
+    then
+        $BB mount -o remount,rw,relatime,barrier=1,data=ordered,noauto_da_alloc -t ext4 /system;
+        $BB rm /system/etc/init.d/10apps2sd;
+        $BB mount -o remount,ro,relatime,barrier=1,data=ordered,noauto_da_alloc -t ext4 /system;
+        log -p e -t mountsd "$SD_EXT_DIRECTOR not found, 10apps2sd has been removed!";
+    fi;
+fi;

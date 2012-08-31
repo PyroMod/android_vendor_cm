@@ -29,10 +29,29 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/cm/CHANGELOG.mkdn:system/etc/CHANGELOG-CM.txt
 
-# init.d support
+# Init.d support
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/cm/prebuilt/common/bin/sysinit:system/bin/sysinit
+
+# Check if modules exist 
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/etc/init.d/91modules:system/etc/init.d/91modules
+
+# SD-Ext support
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/etc/init.d/05mountsd:system/etc/init.d/05mountsd \
+    vendor/cm/prebuilt/common/etc/init.d/10apps2sd:system/etc/init.d/10apps2sd
+
+# Sysctl support
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf \
+    vendor/cm/prebuilt/common/etc/init.d/01sysctl:system/etc/init.d/01sysctl
+
+# Tweaks support
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/etc/resolv.conf:system/etc/resolv.conf \
+    vendor/cm/prebuilt/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks
 
 # Userinit support
 PRODUCT_COPY_FILES += \
@@ -46,20 +65,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/etc/init.d/01zram:system/etc/init.d/01zram
 
-# Sysctl support
-PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf \
-    vendor/cm/prebuilt/common/etc/init.d/01sysctl:system/etc/init.d/01sysctl
-
-# Check if modules exist 
-PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/init.d/91modules:system/etc/init.d/91modules \
-
-# Tweaks support
-PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/resolv.conf:system/etc/resolv.conf \
-    vendor/cm/prebuilt/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks
-
+# Prebuilt files
 PRODUCT_COPY_FILES +=  \
     vendor/cm/prebuilt/common/app/Superuser.apk:system/app/Superuser.apk \
     vendor/cm/prebuilt/common/xbin/su:system/xbin/su \

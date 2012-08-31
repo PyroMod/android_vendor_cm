@@ -15,18 +15,9 @@
 # limitations under the License.
 #
 
-# Disable normalize sleeper for performance
-mount -t debugfs none /sys/kernel/debug
-echo "NO_NORMALIZED_SLEEPER" > /sys/kernel/debug/sched_features
-
 # Defrag database files for increased I/O perfomance
 for i in \
 `find /data -iname "*.db"`
 do \
 sqlite3 $i 'VACUUM;';
 done
-
-# Increase sdcard read ahead cache
-echo "2048" > /sys/block/mmcblk0/bdi/read_ahead_kb;
-echo "2048" > /sys/block/mmcblk1/bdi/read_ahead_kb;
-echo "2048" > /sys/devices/virtual/bdi/179:0/read_ahead_kb;
