@@ -29,45 +29,24 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/cm/CHANGELOG.mkdn:system/etc/CHANGELOG-CM.txt
 
-# Init.d support
+# Init.d support and scripts
 PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/bin/sysinit:system/bin/sysinit \
     vendor/cm/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/cm/prebuilt/common/bin/sysinit:system/bin/sysinit
-
-# Check if modules exist 
-PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/init.d/91modules:system/etc/init.d/91modules
-
-# SD-Ext support
-PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/etc/init.d/01sysctl:system/etc/init.d/01sysctl \
+    vendor/cm/prebuilt/common/etc/init.d/01zram:system/etc/init.d/01zram \
     vendor/cm/prebuilt/common/etc/init.d/05mountsd:system/etc/init.d/05mountsd \
-    vendor/cm/prebuilt/common/etc/init.d/10apps2sd:system/etc/init.d/10apps2sd
+    vendor/cm/prebuilt/common/etc/init.d/10apps2sd:system/etc/init.d/10apps2sd \
+    vendor/cm/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
+    vendor/cm/prebuilt/common/etc/init.d/91modules:system/etc/init.d/91modules \
+    vendor/cm/prebuilt/common/etc/init.d/95zipalign:system/etc/init.d/95zipalign \
+    vendor/cm/prebuilt/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
+    vendor/cm/prebuilt/common/etc/init.d/99complete:system/etc/init.d/99complete
 
-# Sysctl support
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf \
-    vendor/cm/prebuilt/common/etc/init.d/01sysctl:system/etc/init.d/01sysctl
-
-# Tweaks support
-PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/resolv.conf:system/etc/resolv.conf \
-    vendor/cm/prebuilt/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks
-
-# Userinit support
-PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
-
-# Zipalign support
-PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/init.d/95zipalign:system/etc/init.d/95zipalign
-
-# Zram support
-PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/etc/init.d/01zram:system/etc/init.d/01zram
-
-# Prebuilt files
-PRODUCT_COPY_FILES +=  \
     vendor/cm/prebuilt/common/app/Superuser.apk:system/app/Superuser.apk \
+    vendor/cm/prebuilt/common/etc/resolv.conf:system/etc/resolv.conf \
+    vendor/cm/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf \
     vendor/cm/prebuilt/common/xbin/su:system/xbin/su \
     vendor/cm/proprietary/RomManager.apk:system/app/RomManager.apk \
     vendor/cm/proprietary/Term.apk:system/app/Term.apk \
@@ -116,7 +95,8 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     VisualizationWallpapers \
-    PhaseBeam
+    PhaseBeam \
+    FileManager
 
 # Custom CM packages
 PRODUCT_PACKAGES += \
