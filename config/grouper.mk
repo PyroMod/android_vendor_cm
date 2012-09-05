@@ -73,12 +73,6 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
 endif
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.goo.developerid=sparksco \
-    ro.goo.board=$(TARGET_PRODUCT) \
-    ro.goo.rom=sparkscoCM10Nightlies \
-    ro.goo.version=$(shell date +%s)
-
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -109,7 +103,6 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/bin/modelid_cfg.sh:system/bin/modelid_cfg.sh
 
 PRODUCT_COPY_FILES +=  \
-    vendor/cm/proprietary/goomanager.apk:system/app/goomanager.apk \
     vendor/cm/proprietary/Term.apk:system/app/Term.apk \
     vendor/cm/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so \
     vendor/cm/prebuilt/common/apps/Superuser.apk:system/app/Superuser.apk
