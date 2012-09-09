@@ -33,18 +33,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/bin/sysinit:system/bin/sysinit \
     vendor/cm/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/cm/prebuilt/common/etc/init.d/01sysctl:system/etc/init.d/01sysctl \
     vendor/cm/prebuilt/common/etc/init.d/01zram:system/etc/init.d/01zram \
     vendor/cm/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
-    vendor/cm/prebuilt/common/etc/init.d/91modules:system/etc/init.d/91modules \
     vendor/cm/prebuilt/common/etc/init.d/95zipalign:system/etc/init.d/95zipalign \
     vendor/cm/prebuilt/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
     vendor/cm/prebuilt/common/etc/init.d/99complete:system/etc/init.d/99complete
 
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/app/Superuser.apk:system/app/Superuser.apk \
-    vendor/cm/prebuilt/common/etc/resolv.conf:system/etc/resolv.conf \
-    vendor/cm/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf \
     vendor/cm/prebuilt/common/xbin/su:system/xbin/su \
     vendor/cm/proprietary/RomManager.apk:system/app/RomManager.apk \
     vendor/cm/proprietary/Term.apk:system/app/Term.apk \
