@@ -98,7 +98,7 @@ echo MODVERSION: $MODVERSION
 
 # Pack it up and sign
 printf "Zipping package..."
-( cd $REPACK/ota; zip $QUIET -r $REPACK/update.zip . )
+( cd $REPACK/ota; zip -9 -r $REPACK/update.zip . )
 echo
 printf "Signing package..."
 SECURITYDIR=$ANDROID_BUILD_TOP/build/target/product/security
