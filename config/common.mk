@@ -33,7 +33,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/bin/sysinit:system/bin/sysinit \
     vendor/cm/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/cm/prebuilt/common/etc/init.d/01zram:system/etc/init.d/01zram \
     vendor/cm/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
     vendor/cm/prebuilt/common/etc/init.d/95zipalign:system/etc/init.d/95zipalign
 
