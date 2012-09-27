@@ -131,8 +131,8 @@ ifdef CM_BUILDTYPE
         CM_EXTRAVERSION := -$(CM_EXTRAVERSION)
     endif
 else
-    # If CM_BUILDTYPE is not defined, set to UNOFFICIAL
-    CM_BUILDTYPE := PYROMOD
+    # If CM_BUILDTYPE is not defined, set to INFERNO
+    CM_BUILDTYPE := INFERNO
     CM_EXTRAVERSION :=
 endif
 
