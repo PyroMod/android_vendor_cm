@@ -38,10 +38,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/app/Superuser.apk:system/app/Superuser.apk \
-    vendor/cm/prebuilt/common/xbin/su:system/xbin/su \
-    vendor/cm/proprietary/RomManager.apk:system/app/RomManager.apk \
-    vendor/cm/proprietary/Term.apk:system/app/Term.apk \
-    vendor/cm/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so
+    vendor/cm/prebuilt/common/xbin/su:system/xbin/su
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
