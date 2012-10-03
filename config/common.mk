@@ -83,8 +83,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     VisualizationWallpapers \
-    PhaseBeam \
-    FileManager
+    PhaseBeam
 
 # Custom CM packages
 PRODUCT_PACKAGES += \
