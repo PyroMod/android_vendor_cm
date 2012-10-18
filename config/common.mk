@@ -129,7 +129,7 @@ ifdef CM_BUILDTYPE
     endif
 else
     # If CM_BUILDTYPE is not defined, set to INFERNO
-    CM_BUILDTYPE := INFERNO
+    CM_BUILDTYPE := TEAMINFERNO
     CM_EXTRAVERSION :=
 endif
 
