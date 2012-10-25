@@ -87,8 +87,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     VisualizationWallpapers \
-    PhaseBeam \
-    FileManager
+    PhaseBeam
 
 # Custom CM packages
 PRODUCT_PACKAGES += \
@@ -97,8 +96,7 @@ PRODUCT_PACKAGES += \
     libcyanogen-dsp \
     audio_effects.conf \
     CMWallpapers \
-    Apollo \
-    CMUpdater
+    Apollo
 
 # Extra tools in CM
 PRODUCT_PACKAGES += \
